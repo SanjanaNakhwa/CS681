@@ -15,10 +15,11 @@ public class FileSystemMultipleThreads {
         Thread[] threads = new Thread[numThreads];
 
         for (int i = 0; i < numThreads; i++) {
+            
             threads[i] = new Thread(() -> {
                 FileSystem fileSystem = FileSystem.getFileSystem();
                 fileSystemSet.add(fileSystem);
-                // Do something with the fileSystem object
+
             });
             threads[i].start();
         }
