@@ -4,7 +4,7 @@
 
       on a shell. 
 -->
-<project name="RunnableCancellablePrimeGenerator-junit5-ivy" basedir="."  default="clean" xmlns:ivy="antlib:org.apache.ivy.ant">
+<project name="FileSystemMultipleThreads-junit5-ivy" basedir="."  default="clean" xmlns:ivy="antlib:org.apache.ivy.ant">
 	<property name="src" location="src" />
 	<property name="bin" location="bin" />
 	<property name="ivy.lib" location="lib"/>
@@ -28,21 +28,21 @@
 	<target name="compile" depends="resolve">
 		<javac srcdir="${src}" destdir="${bin}" includeAntRuntime="no">
 			<classpath refid="classpath"/>
-			<include name="edu/umb/CS681/primes/*.java"/>
-			<!-- include name="edu/umb/CS681/primes/RunnableCancellablePrimeGenerator.java"/-->
+			<include name="edu/umb/CS681/hw07/*.java"/>
+			<!-- include name="edu/umb/CS681/hw07/FileSystem.java"/-->
 		</javac>
 		
 	</target>
 
 	<target name="run" depends="compile">
-		<java classname="edu.umb.CS681.primes.RunnableCancellablePrimeGenerator"
+		<java classname="edu.umb.CS681.hw07.FileSystemMultipleThreads"
 				classpathref="classpath"  
 				fork="true"/>
 	</target>
 	
 	<target name="clean" depends="run">
 		<delete includeemptydirs="true">
-			<fileset dir="${bin}/edu/umb/CS681/primes" includes="**/*"/>
+			<fileset dir="${bin}/edu/umb/CS681/hw07" includes="**/*"/>
 		</delete>
 	</target>
 	

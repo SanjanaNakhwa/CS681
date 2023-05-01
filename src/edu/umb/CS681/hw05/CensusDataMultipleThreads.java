@@ -169,35 +169,31 @@ public class CensusDataMultipleThreads {
             processDataThread3.join();
             processDataThread4.join();
 
-            //#1
-
+            //1
             System.out.println("Data processing #1:");
             System.out.println("Average price: " + allDataProcessing.get("chasAvgPrice"));
             System.out.println("Minimum price: " + allDataProcessing.get("chasMinPrice"));
             System.out.println("Maximum price: " + allDataProcessing.get("chasMaxPrice"));
 
-            //#2a
+            //2a
             System.out.println("Data processing #2a:");
             System.out.println("Average price: " + allDataProcessing.get("commonAvgPrice"));
             System.out.println("Minimum price: " + allDataProcessing.get("commonMinPrice"));
             System.out.println("Maximum price: " + allDataProcessing.get("commonMaxPrice"));
 
             //2b
-
             System.out.println("Data processing #2b:");
             System.out.println("Average price: " + allDataProcessing.get("commonAvgNox"));
             System.out.println("Minimum price: " + allDataProcessing.get("commonMinNox"));
             System.out.println("Maximum price: " + allDataProcessing.get("commonMaxNox"));
 
             //2c
-
             System.out.println("Data processing #2c:");
             System.out.println("Average price: " + allDataProcessing.get("commonAvgRooms"));
             System.out.println("Minimum price: " + allDataProcessing.get("commonMinRooms"));
             System.out.println("Maximum price: " + allDataProcessing.get("commonMaxRooms"));
 
             //3
-
             System.out.println("Data processing #3:");
             System.out.println("Average price: " + allDataProcessing.get("chasAvgAge"));
             System.out.println("Minimum price: " + allDataProcessing.get("chasMinAge"));
@@ -205,7 +201,6 @@ public class CensusDataMultipleThreads {
  
 
             //4
-    
             System.out.println("Data processing #4:");
             System.out.println("Average price: " + allDataProcessing.get("commonAvgTaxRatio"));
             System.out.println("Minimum price: " + allDataProcessing.get("commonMinTaxRatio"));

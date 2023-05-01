@@ -101,7 +101,7 @@ public class CensusDataProcessor {
              double chasMinAge = chasBlocks.stream().mapToDouble(block -> Double.parseDouble(block.get(6))).min().orElse(0);
              double chasMaxAge = chasBlocks.stream().mapToDouble(block -> Double.parseDouble(block.get(6))).max().orElse(0);
  
-             System.out.println("Data processing #1:");
+             System.out.println("Data processing #3:");
              System.out.println("Areas/blocks next to Charles river: " + chasBlocks.size());
              System.out.println("Average Age: " + chasAvgAge);
              System.out.println("Minimum Age: " + chasMinAge);
