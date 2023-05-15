@@ -4,23 +4,11 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class RunnableCancellableInterruptiblePrimeFactorizer extends RunnableCancellablePrimeFactorizer{
 	
-	private boolean done = false;
-	private final ReentrantLock lock = new ReentrantLock();
 	
 	public RunnableCancellableInterruptiblePrimeFactorizer(long dividend, long from, long to) {
 		super(dividend,from, to);
 	}
 	
-	public void setDone(){
-		lock.lock();
-		try {
-			done = true;
-		}
-		finally {
-			lock.unlock();
-		}
-	}
-
 	public void generatePrimeFactors() {
 
 		long divisor = from;
