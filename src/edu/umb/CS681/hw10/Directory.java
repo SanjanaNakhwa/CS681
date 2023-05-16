@@ -17,7 +17,7 @@ public class Directory extends FSElement {
 
     public boolean isDirectory() {
         lock.lock();
-		
+
         try {
             return true;
         } 
@@ -106,7 +106,6 @@ public class Directory extends FSElement {
 
     public LinkedList<File> getFiles() {
         lock.lock();
-
         try {
             LinkedList<File> files = new LinkedList<>();
             for (FSElement fsElement : this.children) {
