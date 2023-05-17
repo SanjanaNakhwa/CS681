@@ -30,6 +30,7 @@ public class FileSystemMultipleThreads {
                 e.printStackTrace();
             }
         }
+        System.out.println("The total number of threads of file system are:" + numThreads);
         System.out.println("The total number of instances of file system are:" + fileSystemSet.size());
     }
  }

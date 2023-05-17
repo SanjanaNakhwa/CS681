@@ -22,30 +22,27 @@ public class RequestHandler implements Runnable {
 
     public void run() {
         while (true) {
+            
             if (done){  
                 break;
             }
+            File[] files = folderPath.toFile().listFiles();
+            
+            Path file = files[random.nextInt(files.length)].toPath();
+
+            // Call increment() and/or getCount() for the file
+            counter.increment(file);
+            int count = counter.getCount(file);
+
+            System.out.println("File " + file + " accessed " + count + " times.");
+
+            // Sleep 
             try {
-                // Pick a random file in the folder
-                File[] files = folderPath.toFile().listFiles();
-                if (files.length == 0) {
-                    System.out.println("No files in folder, sleeping for 5 seconds.");
-                    Thread.sleep(5000);
-                    continue;
-                }
-                Path file = files[random.nextInt(files.length)].toPath();
-
-                // Call increment() and/or getCount() for the file
-                counter.increment(file);
-                int count = counter.getCount(file);
-
-                // Sleep for a few seconds
-                System.out.println("File " + file + " accessed " + count + " times.");
                 Thread.sleep(3000);
             }
             catch (InterruptedException e) {
                 System.out.println("Interrupted, exiting.");
-                return;
+                break;
             }
         }
     }

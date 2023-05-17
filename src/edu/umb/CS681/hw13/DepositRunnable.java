@@ -12,6 +12,7 @@ public class DepositRunnable implements Runnable {
     }
 
     public void run() {
+		//try and catch should be inside while
         try {
             while (!done) {
                 account.deposit(100);

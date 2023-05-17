@@ -48,7 +48,8 @@ public class AccessCounter {
             } else {
                 return 0;
             }
-        } finally {
+        } 
+        finally {
             rwLock.readLock().unlock();
         }
     }
