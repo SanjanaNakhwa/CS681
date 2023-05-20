@@ -31,7 +31,8 @@ public class RequestHandler implements Runnable {
             // Sleep for a certain period
             try {
                 Thread.sleep(3000);
-            } catch (InterruptedException e) {
+            } 
+            catch (InterruptedException e) {
                 System.out.println("Interrupted, exiting.");
                 break;
             }

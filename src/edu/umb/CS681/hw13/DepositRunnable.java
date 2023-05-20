@@ -12,20 +12,21 @@ public class DepositRunnable implements Runnable {
     }
 
     public void run() {
-		//try and catch should be inside while
-        try {
-            while (!done) {
+        while (!done) {
+            try {
                 account.deposit(100);
                 Thread.sleep(Duration.ofSeconds(2).toMillis());
+            } 
+            catch (InterruptedException exception) {
+                // Handles interruption
+                System.out.println("Deposit thread interrupted");
+                Thread.currentThread().interrupt(); // Restore interrupted status
             }
-        } catch (InterruptedException exception) {
-            // Handle interruption
-            System.out.println("Deposit thread interrupted");
-            Thread.currentThread().interrupt(); // Restore interrupted status
         }
     }
-
+    
     public void setDone() {
         done = true;
     }
+    
 }
