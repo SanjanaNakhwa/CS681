@@ -74,6 +74,30 @@ public class FileTest {
 
         });
 
+        Thread t8 = new Thread(() -> {
+            FSElement targetE = e.getTarget();
+            System.out.println(" Thread8- Get Target of E " + targetE);
+            Directory pictureParent = pictures.getParent();
+            System.out.println(" Thread8- Get Parent of Pictures " + pictureParent);
+
+        });
+
+        Thread t9 = new Thread(() -> {
+            FSElement targetD = d.getTarget();
+            System.out.println(" Thread9- Get Target of D " + targetD);
+
+        });
+
+        Thread t10 = new Thread(() -> {
+            Boolean isLink = home.isLink();
+            System.out.println(" Thread10- Is home a link: " + isLink);
+        });
+
+        Thread t11 = new Thread(() -> {
+            LocalDateTime ctB = b.getCreationTime();
+            System.out.println(" Thread11- Creation time of b " + ctB);
+        });
+
         t1.start();
         t2.start();
         t3.start();
@@ -81,5 +105,12 @@ public class FileTest {
         t5.start();
         t6.start();
         t7.start();
+        t8.start();
+        t9.start();
+        t10.start();
+        t11.start();
+
+
+        
     }
 }
